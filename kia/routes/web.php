@@ -20,6 +20,9 @@ Route::get('/', function () {
 
 Route::get('/hello', [HelloWorldController::class, 'show']);
 
+Route::get('/demo', function () {
+    return view('demo');
+});
 
 Auth::routes();
 
