@@ -1,26 +1,74 @@
-    <div class="collapse bg-inverse" id="navbarHeader">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 py-4">
-            <h4 class="text-white">About</h4>
-            <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
-          </div>
-          <div class="col-sm-4 py-4">
-            <h4 class="text-white">Contact</h4>
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-white">Follow on Twitter</a></li>
-              <li><a href="#" class="text-white">Like on Facebook</a></li>
-              <li><a href="#" class="text-white">Email me</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="navbar navbar-inverse bg-inverse">
+    <div class="navbar navbar-inverse" style="background-color: #05141f;">
       <div class="container d-flex justify-content-between">
-        <a href="#" class="navbar-brand">Album</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          @if (Route::has('login'))
+      <div class = "col-10" style="text-align: left;">
+        			<a class="ftr" href="https://www.kia.com/pl/jazdy-testowe/" target="_self">Jazda testowa</a>
+        			&nbsp;&nbsp;&nbsp;
+        			<a class="ftr" href="https://www.kia.com/pl/katalogi-i-cenniki/" target="_self">Katalogi i cenniki</a>
+        			&nbsp;&nbsp;&nbsp;
+        			<a class="ftr" href="https://www.kia.com/pl/dealerzy/" target="_self">Dealerzy </a>
+        			&nbsp;&nbsp;&nbsp;
+        			<a class="ftr" href="https://www.kia.com/pl/internetowy-salon/" target="_self">Internetowy salon Kia</a>
+        			&nbsp;&nbsp;&nbsp;
+        			<a class="ftr" href="https://www.kia.com/pl/kontakt/">Kontakt</a>
+      </div>
+      <div class = "col-10" style="text-align: left;">
+            @auth
+                <a class="ftr" href="{{ url('/home') }}">Strona główna</a>&nbsp;&nbsp;&nbsp;
+                <a class="ftr" href="{{ url('/koszyk') }}">🛒 Koszyk</a>&nbsp;&nbsp;&nbsp;
+                <a class="ftr" href="{{ route('logout') }}"
+                                                       onclick="event.preventDefault();
+                                                                     document.getElementById('logout-form').submit();">
+                                                        {{ __('Wyloguj się') }}
+                                                    </a>
+                                                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                                                            @csrf
+                                                                                        </form>
+            @else
+                 <a class="ftr" href="{{ route('login') }}">Logowanie</a>&nbsp;&nbsp;&nbsp;
+                 <a class="ftr" href="{{ url('/koszyk') }}">🛒 Koszyk</a>&nbsp;&nbsp;&nbsp;
+
+                @if (Route::has('register'))
+                    <a class="ftr" href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Rejestracja</a>&nbsp;&nbsp;&nbsp;
+                @endif
+             @endauth
+      @endif
+      </div>
+
+      </div>
       </div>
     </div>
+    <div class="navbar navbar-inverse bg-white">
+             <div class="container d-flex justify-content-between" style="line-height: 2cm;">
+                  <style>
+                    a.navu:link {color: black; font-size:15px; font-weight: 700;}
+                    a.navu:visited {color: black; font-size:15px; font-weight: 700;}
+
+                    a.navua:link {color: black; font-size:13px;}
+                    a.navua:visited {color: black; font-size:13px;}
+                  </style>
+
+               <div class="col" style="text-align: left;">
+                 <a class="navu" href="#" class="text-white">Modele</a>
+                 &nbsp;&nbsp;
+                  <a class="navu" href="#" class="text-white">Sprzedaż</a>
+                  &nbsp;&nbsp;
+                  <a class="navu" href="#" class="text-white">Używane</a>
+               </div>
+               <div class="col" style="text-align: center;">
+                 <img src="https://www.kia.com/etc.clientlibs/settings/wcm/designs/eut/clientlib/resources/rbr/logo_kia_black-rbr.png" alt="KIA" width="82" height="26">
+               </div>
+               <div class="col" style="text-align: right;">
+                 <div class="col" style="text-align: left;">
+                      <a class="navu" href="#">Flota</a>
+                      &nbsp;
+                      <a class="navu" href="#" >Serwis</a>
+                      &nbsp;
+                      <a class="navu" href="#" >Świat Kia</a>
+                      &nbsp;
+                      <a class="navu" href="#" >⚙️Konfigurator</a>
+                 </div>
+               </div>
+             </div>
+    </div>
+

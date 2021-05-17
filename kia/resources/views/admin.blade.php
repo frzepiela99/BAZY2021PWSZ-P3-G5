@@ -16,6 +16,10 @@
 
                    @component('components.who')
                    @endcomponent
+
+                  <a href="http://kia.test/dodajkolorform" class="btn btn-primary" role="button" data-bs-toggle="button">Dodaj kolor</a>
+                  <a href="http://kia.test/dodajwersjeform" class="btn btn-primary" role="button" data-bs-toggle="button">Dodaj wersje</a>
+
                 </div>
             </div>
         </div>

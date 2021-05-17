@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HelloWorldController;
+use App\Http\Controllers\DemoController;
+use App\Http\Controllers\DodajKolorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,14 +22,32 @@ Route::get('/', function () {
 
 Route::get('/hello', [HelloWorldController::class, 'show']);
 
-Route::get('/demo', function () {
-    return view('demo');
-});
+#Route::get('/demo', [DemoController::class, 'show']);
+
+//formularze Panel Admina
+        //Dodawanie koloru
+        Route::view('dodajkolorform', 'dodajkolor');
+        Route::post('/submit', [DodajKolorController::class, 'save']);
+
+        //Dodawanie wersji
+        Route::view('dodajwersjeform', 'dodajwersje');
+        Route::post('/wersja-submit', [DodajWersjeController::class, 'save']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/users/logout', [App\Http\Controllers\Auth\LoginController::class, 'userLogout'])->name('user.logout');
+
+/*Route::resource('posts', 'PostController');
+Route::get('posts', 'PostsController@index');
+Route::get('posts/create', 'PostController@create');
+Route::post('posts', 'PostController@store');
+Route::get('posts/{post}', 'PostsController@show');
+Route::get('posts/{post}/edit', 'PostsController@edit');
+Route::put('posts/{post}', 'PostsController@update'); // lub Route::patch('/posts/{post}', 'PostsController@update');
+Route::delete('posts/{post}', 'PostsController@destroy');
+*/
+
 
  Route::prefix('admin')->group(function(){
     Route::get('/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'showLoginForm'])->name('admin.login');

@@ -1,57 +1,116 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.mainlayout')
 
-        <title>Konfigurator KIA</title>
+@section('content')
+    <div class="album text-muted">
+      <div class="container">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <div class="row" style="color: black; text-align: center;">
+                  <figure class="figure">
+                    <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-picanto-jape-my21-gtl-explore-the-range-268x134.png" class="figure-img img-fluid rounded" alt="Nowe Picanto" width="70%" height="70%">
+                    <figcaption class="figure-caption"><b>Nowe Picanto</b></figcaption>
+                    <figcaption class="figure-caption">Od 39 990 zł</figcaption>
+                  </figure>
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-rio-yb-pe-my21-range-explore-268x134.png" class="figure-img img-fluid rounded" alt="Nowe Picanto" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>Nowe Rio</b></figcaption>
+                   <figcaption class="figure-caption">Od 51 990 zł</figcaption>
+                </figure>
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}}
-        </style>
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-ceed-cd-5dr_268x134.png" class="figure-img img-fluid rounded" alt="Creed" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>Creed</b></figcaption>
+                   <figcaption class="figure-caption">Od 67 990 zł</figcaption>
+                </figure>
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-white-100 light:bg-white sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="fixed top-0 left-0 px-6 py-4 sm:block" style="background-color: #05141f;">
-                <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Jazda testowa</a>
-                <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Katalogi i cenniki</a>
-                <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Dealerzy</a>
-                <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Internetowy salon KIA</a>
-                <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Kontakt</a>
-                </div>
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block" style="background-color: #05141f;">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Strona główna</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Logowanie</a>
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-ceed-cd-gt-explore_268x134.png" class="figure-img img-fluid rounded" alt="Ceed GT" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>Creed GT</b></figcaption>
+                   <figcaption class="figure-caption">Od 111 990 zł</figcaption>
+                </figure>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Rejestracja</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-ceed-wgn-explore_268x134.png" class="figure-img img-fluid rounded" alt="Ceed Kombi" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>Ceed Kombi</b></figcaption>
+                   <figcaption class="figure-caption">Od 71 990 zł</figcaption>
+                </figure>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="panel">
-                              <h1>Tu będzie Konfigurator</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-    </body>
-</html>
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-cd-wgn-phev-my20-explore-268x134.png" class="figure-img img-fluid rounded" alt="Ceed Kombi" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>Ceed Kombi PHEV</b></figcaption>
+                   <figcaption class="figure-caption">Od 127 990 zł</figcaption>
+                </figure>
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-proceed-cd-sb-my19-explore_268x134.png" class="figure-img img-fluid rounded" alt="Ceed Kombi" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>ProCeed</b></figcaption>
+                   <figcaption class="figure-caption">Od 99 990 zł</figcaption>
+                </figure>
+                 <figure class="figure">
+                    <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-xceed-cd-sb-my20-explore_268x134.png" class="figure-img img-fluid rounded" alt="Ceed Kombi" width="70%" height="70%">
+                    <figcaption class="figure-caption"><b>XCeed</b></figcaption>
+                    <figcaption class="figure-caption">Od 81 990 zł</figcaption>
+                 </figure>
+                   <figure class="figure">
+                      <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-cd-xceecd-phev-my20-explore-268x134.png" class="figure-img img-fluid rounded" alt="Ceed Kombi" width="70%" height="70%">
+                      <figcaption class="figure-caption"><b>XCeed PHEV</b></figcaption>
+                      <figcaption class="figure-caption">Od 129 990 zł</figcaption>
+                   </figure>
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-stonic-yb-cuv-pe-my21-range-explore-268x134.png" class="figure-img img-fluid rounded" alt="Ceed Kombi" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>Nowy Stonic</b></figcaption>
+                   <figcaption class="figure-caption">Od 63 490 zł</figcaption>
+                </figure>
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-niro-de-pe-hev-my20-explore_268x134.png" class="figure-img img-fluid rounded" alt="Ceed Kombi" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>Niro HEV</b></figcaption>
+                   <figcaption class="figure-caption">Od 97 990 zł</figcaption>
+                </figure>
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-niro-de-pe-phev-my20-explore_268x134.png" class="figure-img img-fluid rounded" alt="Ceed Kombi" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>Niro PHEV</b></figcaption>
+                   <figcaption class="figure-caption">Od 130 900 zł</figcaption>
+                </figure>
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-niro-de-ev-my20-explore_268x134.png" class="figure-img img-fluid rounded" alt="Ceed Kombi" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>e-Niro</b></figcaption>
+                   <figcaption class="figure-caption">Od 146 990 zł</figcaption>
+                </figure>
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-e-soul-my19-explore-268x134.png" class="figure-img img-fluid rounded" alt="Ceed Kombi" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>e-Soul</b></figcaption>
+                   <figcaption class="figure-caption">Od 139 990 zł</figcaption>
+                </figure>
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia_sportage_ql_pe_gtline_my19_explore_268x134.jpg" class="figure-img img-fluid rounded" alt="Ceed Kombi" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>Sportage</b></figcaption>
+                   <figcaption class="figure-caption">Od 81 990 zł</figcaption>
+                </figure>
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-sorento-mq4-hev-my21-268x134.png" class="figure-img img-fluid rounded" alt="Ceed Kombi" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>Nowe Sorento HEV</b></figcaption>
+                   <figcaption class="figure-caption">Od 159 900 zł</figcaption>
+                </figure>
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-sorento-mq4-phev-my21-range-explore_268x134.png" class="figure-img img-fluid rounded" alt="Ceed Kombi" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>Nowe Sorento PHEV</b></figcaption>
+                   <figcaption class="figure-caption">Od 195 900 zł</figcaption>
+                </figure>
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-sorento-mq4-ice-my21-268x134.png" class="figure-img img-fluid rounded" alt="Ceed Kombi" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>Nowe Sorento</b></figcaption>
+                   <figcaption class="figure-caption">Od 189 900 zł</figcaption>
+                </figure>
+                <figure class="figure">
+                   <img src="https://www.kia.com/content/dam/kwcms/kme/global/en/assets/gnb/kia-stinger-pe-my21-gt-explore-268x134.png" class="figure-img img-fluid rounded" alt="Ceed Kombi" width="70%" height="70%">
+                   <figcaption class="figure-caption"><b>Nowy Stinger</b></figcaption>
+                   <figcaption class="figure-caption">Od 239 990 zł</figcaption>
+                </figure>
+          <br>
+          <br><br>
+          <div class="opis" style="center">
+          <p style="font-size: 11px; text-align: left;">Cennik podany w konfiguratorze nie stanowi oferty, a jedynie zaproszenie do zawarcia umowy. Dlatego poszczególne pozycje podane w cenniku w konfiguratorze mają walor rekomendacji i nie są wiążące. W wypadku sprzedaży konsumenckiej zawarte w tym cenniku informacje nie stanowią zapewnienia ani oświadczenia gwarancyjnego w rozumieniu kodeksu cywilnego, jak również nie stanowią opisu w rozumieniu ustawy z 30-05-2014 o prawach konsumenta. Niniejszy cennik oraz cenniki wyposażenia dodatkowego stanowią podstawę do ustalenia ceny. Ostateczne określenie ceny następuje po uzgodnieniu przez Dealera i Klienta szczegółowych cech zamówienia. Informujemy, że elementy dodatkowe wyposażenia stanowią odrębny od samochodu przedmiot sprzedaży. Wiążące ustalenie ceny, wyposażenia i specyfikacji pojazdu, a także określenie parametrów technicznych zawiera świadectwo homologacji typu pojazdu oraz umowa sprzedaży pojazdu. Podane ceny zawierają podatek VAT.</p>
+          <br><br><br>
+          </div>
+		</div>
+      </div>
+    </div>
+@endsection
